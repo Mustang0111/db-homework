@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>商品列表</title>
+</head>
+<body>
+
+<h1>商品列表</h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>商品名</th>
+        <th>分类</th>
+        <th>价格</th>
+        <th>卖家</th>
+        <th>状态</th>
+    </tr>
+
+    {% for item in items %}
+    <tr>
+        <td>{{ item.item_id }}</td>
+        <td>{{ item.item_name }}</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.seller_id }}</td>
+        <td>
+            {% if item.status == 0 %}
+                未售出
+            {% else %}
+                已售出
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br>
+<a href="/">返回首页</a>
+
+</body>
+</html>

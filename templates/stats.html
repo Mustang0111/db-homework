@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>统计功能</title>
+</head>
+<body>
+
+<h1>统计功能</h1>
+
+<h2>商品总数</h2>
+<p>{{ total.total }}</p>
+
+<h2>每类商品数量</h2>
+<ul>
+{% for row in category %}
+    <li>{{ row.category }} : {{ row.count }}</li>
+{% endfor %}
+</ul>
+
+<h2>平均价格</h2>
+<p>{{ avg_price.avg }}</p>
+
+<h2>发布商品最多的用户</h2>
+<p>{{ top_user.seller_id }}</p>
+
+<br>
+<a href="/">返回首页</a>
+
+</body>
+</html>
