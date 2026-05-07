@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>查询功能</title>
+</head>
+<body>
+
+<h1>查询功能</h1>
+
+<h2>1. 所有未售出的商品</h2>
+<ul>
+{% for item in unsold %}
+    <li>{{ item.item_name }}</li>
+{% endfor %}
+</ul>
+
+<h2>2. 价格大于30的商品</h2>
+<ul>
+{% for item in expensive %}
+    <li>{{ item.item_name }} - {{ item.price }}</li>
+{% endfor %}
+</ul>
+
+<h2>3. 生活用品类商品</h2>
+<ul>
+{% for item in life_items %}
+    <li>{{ item.item_name }}</li>
+{% endfor %}
+</ul>
+
+<h2>4. u001发布的商品</h2>
+<ul>
+{% for item in u001_items %}
+    <li>{{ item.item_name }}</li>
+{% endfor %}
+</ul>
+
+<h2>5. 已售商品及买家姓名</h2>
+<ul>
+{% for row in sold_with_buyer %}
+    <li>{{ row.item_name }} - {{ row.user_name }}</li>
+{% endfor %}
+</ul>
+
+<br>
+<a href="/">返回首页</a>
+
+</body>
+</html>

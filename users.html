@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+</head>
+<body>
+
+<h1>用户列表</h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>用户名</th>
+        <th>电话</th>
+    </tr>
+
+    {% for user in users %}
+    <tr>
+        <td>{{ user.user_id }}</td>
+        <td>{{ user.user_name }}</td>
+        <td>{{ user.phone }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br>
+<a href="/">返回首页</a>
+
+</body>
+</html>
